@@ -22,14 +22,15 @@ describe("Add Song page interactions", () => {
     cy.contains(song.name).should("be.visible");
   });
 
-  it.skip("should upvote a song successfully", () => {
-    cy.get(".upVote").click();
-    cy.get(".upVote").click();
-    cy.get(".score").contains("2").should("be.visible");
+  it("should upvote a song successfully", () => {
+    cy.get(".upVote").click().click();
+    cy.reload();
+    cy.get(".score").should("have.text", "2");
   });
 
-  it.skip("should upvote a song successfully", () => {
+  it("should downvote a song successfully", () => {
     cy.get(".downVote").click();
-    cy.get(".score").contains("1").should("be.visible");
+    cy.reload();
+    cy.get(".score").should("have.text", "1");
   });
 });
