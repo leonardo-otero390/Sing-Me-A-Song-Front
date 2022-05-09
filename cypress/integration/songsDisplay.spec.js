@@ -11,7 +11,7 @@ describe("Top songs page", () => {
   it("should display the top songs", () => {
     cy.visit("/top");
     cy.get("article").should(($article) => {
-      expect($article).to.have.length(3);
+      expect($article).to.have.length(10);
     });
   });
 
@@ -34,7 +34,7 @@ describe("Home page", () => {
   it("should display songs", () => {
     cy.visit("/");
     cy.get("article").should(($article) => {
-      expect($article).to.have.length(3);
+      expect($article).to.have.length(11);
     });
   });
 });

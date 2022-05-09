@@ -24,7 +24,8 @@ describe("Add Song page interactions", () => {
   });
 
   it("should upvote a song successfully", () => {
-    cy.get(".upVote").click().click();
+    cy.get(".upVote").click();
+    cy.get(".upVote").click();
     cy.reload();
     cy.get(".score").should("have.text", "2");
   });
