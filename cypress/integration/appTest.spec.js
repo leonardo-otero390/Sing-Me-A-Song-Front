@@ -1,11 +1,12 @@
+before(() => {
+  cy.resetDB();
+});
+
 afterEach(() => {
   cy.end();
 });
 
 describe("Add Song page interactions", () => {
-  before(() => {
-    cy.resetDB();
-  });
   it("should add a song successfully", () => {
     const song = {
       name: "Ylvis - Language of Love",
